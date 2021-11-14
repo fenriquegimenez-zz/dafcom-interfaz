@@ -23,7 +23,7 @@ export default function Navbar() {
             <Image src={Logo} alt="Company logo" height={100} width={200} />
           </div>
         </Link>
-        <Dropdown align={{ lg: "start" }}>
+        <Dropdown align={{ xl: "start" }}>
           <Dropdown.Toggle variant="secondary">{<AddIcon />}</Dropdown.Toggle>
           <Dropdown.Menu>
             <Dropdown.Header>Cargar</Dropdown.Header>
