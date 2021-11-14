@@ -1,0 +1,72 @@
+{
+  "proveedores": [
+    {
+      "razonSocial": "Empresa 1",
+      "ruc": "4466154-1"
+    },
+    {
+      "razonSocial": "Empresa 2",
+      "ruc": "4466154-3"
+    },
+    {
+      "razonSocial": "Empresa 3",
+      "ruc": "4466154-2"
+    }
+  ],
+  "tecnicos": [
+    {
+      "documento": 4466154,
+      "nombre": "Enrique",
+      "apellido": "Giménez"
+    },
+    {
+      "documento": 4466154,
+      "nombre": "Enrique",
+      "apellido": "Giménez"
+    },
+    {
+      "documento": 4466154,
+      "nombre": "Enrique",
+      "apellido": "Giménez"
+    }
+  ],
+  "torres": [
+    {
+      "ciudad": "Paraguari",
+      "Direccion": "PY01 km 168",
+      "latitud": "aslidufhsdilsujfhs",
+      "longitud": "ajsdhflajksd",
+      "id": "1"
+    },
+    {
+      "ciudad": "Paraguari",
+      "Direccion": "PY01 km 168",
+      "latitud": "aslidufhsdilsujfhs",
+      "longitud": "ajsdhflajksd",
+      "id": "2"
+    }
+  ],
+  "servicios": [
+    {
+      "torre": "Paraguari",
+      "Descripcion": "Reparacion router",
+      "proveedor": "Empresa 3",
+      "tecnico": "Nombre técnico",
+      "status": false
+    },
+    {
+      "torre": "Paraguari",
+      "Descripcion": "Reparacion router",
+      "proveedor": "Empresa 3",
+      "tecnico": "Nombre técnico",
+      "status": true
+    },
+    {
+      "torre": "Paraguari",
+      "Descripcion": "Reparacion router",
+      "proveedor": "Empresa 3",
+      "tecnico": "Nombre técnico",
+      "status": false
+    }
+  ]
+}
