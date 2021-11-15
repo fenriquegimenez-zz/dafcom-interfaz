@@ -8,7 +8,7 @@ export default function ServiciosForm({
   tecnicos,
 }: ServiciosFormProps) {
   return (
-    <div className="container-fluid w-50">
+    <div className="container-fluid w-75">
       <Title name="Servicios" />
       <div className="input-group mb-3">
         <select className="form-select">
