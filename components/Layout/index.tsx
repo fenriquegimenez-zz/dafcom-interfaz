@@ -4,27 +4,23 @@ import LogButton from "../Buttons/LogButton"
 import Footer from "../Footer"
 import Navbar from "../Navbar"
 import Spinner from "../Spinner"
-
-interface LayoutChild {
-  children: React.ReactNode
-}
+import { LayoutChild } from "../../types/types"
+import Landing from "../Landing"
 
 export default function Layout({ children }: LayoutChild) {
-  const { isAuthenticated, isLoading } = useAuth0()
+  const { isAuthenticated: auth, isLoading } = useAuth0()
   return (
     <div className="container-fluid vh-100">
       {isLoading ? (
         <Spinner />
-      ) : isAuthenticated ? (
+      ) : auth ? (
         <div>
           <Navbar />
           {children}
           <Footer />
         </div>
       ) : (
-        <div className={styles.index.loggedOut}>
-          {LogButton(isAuthenticated)}
-        </div>
+        <Landing auth={auth} />
       )}
     </div>
   )

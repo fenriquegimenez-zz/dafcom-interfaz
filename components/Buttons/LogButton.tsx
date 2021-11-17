@@ -1,16 +1,17 @@
 import { styles } from "../../styles/styles"
 import { useAuth0 } from "@auth0/auth0-react"
+import { LandingProps } from "../../types/types"
 
-export default function LogButton(authed: boolean) {
+export default function LogButton({ auth }: LandingProps) {
   const { loginWithRedirect, logout } = useAuth0()
   const { buttons } = styles
   return (
     <div className={buttons.background}>
       <button
         className={buttons.button}
-        onClick={() => (authed ? logout() : loginWithRedirect())}
+        onClick={() => (auth ? logout() : loginWithRedirect())}
       >
-        {authed ? "Cerrar sesión" : "Iniciar sesión"}
+        {auth ? "Cerrar sesión" : "Iniciar sesión"}
       </button>
     </div>
   )

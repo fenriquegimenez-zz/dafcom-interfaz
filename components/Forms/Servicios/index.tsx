@@ -1,6 +1,7 @@
 import Title from "../../Title"
 import CargarButton from "../../Buttons/cargarButton"
 import { ServiciosFormProps } from "../../../types/types"
+import InputGroup from "../../InputGroup"
 
 export default function ServiciosForm({
   torres,
@@ -9,10 +10,10 @@ export default function ServiciosForm({
 }: ServiciosFormProps) {
   return (
     <div className="container-fluid w-75">
-      <Title name="Servicios" />
-      <div className="input-group mb-3">
+      <Title name="Identificadores" />
+      <InputGroup>
         <select className="form-select">
-          <option value="">Seleccione una torre</option>
+          <option value="">Seleccione una zona</option>
           {torres.map(torre => {
             return (
               <option value={torre.id} key={torre.id}>
@@ -21,10 +22,10 @@ export default function ServiciosForm({
             )
           })}
         </select>
-      </div>
-      <div className="input-group mb-3">
+      </InputGroup>
+      <InputGroup>
         <select className="form-select">
-          <option value="">Seleccione un Proveedor</option>
+          <option value="">Seleccione una institución</option>
           {empresas.map(empresa => {
             return (
               <option key={empresa.ruc} value={empresa.ruc}>
@@ -33,8 +34,8 @@ export default function ServiciosForm({
             )
           })}
         </select>
-      </div>
-      <div className="input-group mb-3">
+      </InputGroup>
+      <InputGroup>
         <select name="" id="" className="form-select">
           <option value="">Seleccione un técnico</option>
           {tecnicos.map(tecnico => {
@@ -46,8 +47,12 @@ export default function ServiciosForm({
             )
           })}
         </select>
-      </div>
-      <CargarButton recurso="servicio" />
+      </InputGroup>
+      <InputGroup>
+        <label className="input-group-text">Identificador RFID</label>
+        <input type="text" className="form-control" id="cardInput" />
+      </InputGroup>
+      <CargarButton recurso="identificador" />
     </div>
   )
 }

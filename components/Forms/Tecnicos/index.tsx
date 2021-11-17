@@ -21,7 +21,7 @@ export default function TecnicosForm({ empresas }: EmpresasProps) {
       </div>
       <div className="input-group mb-3">
         <select name="" id="" className="form-select">
-          <option value="">Seleccione la empresa proveedora</option>
+          <option value="">Seleccione la institución</option>
           {empresas.map((empresa: TEmpresa) => {
             return (
               <option key={empresa.ruc} value={empresa.ruc}>

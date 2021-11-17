@@ -4,7 +4,7 @@ import CargarButton from "../../Buttons/cargarButton"
 export default function ProveedoresForm() {
   return (
     <div className="container-fluid w-75">
-      <Title name="Proveedores" />
+      <Title name="Instituciones" />
       <div className="input-group mb-3">
         <span className="input-group-text">RUC</span>
         <input className="form-control" type="text" />
@@ -17,7 +17,7 @@ export default function ProveedoresForm() {
         <span className="input-group-text">Sector</span>
         <input type="text" className="form-control" />
       </div>
-      <CargarButton recurso="proveedor" />
+      <CargarButton recurso="institución" />
     </div>
   )
 }

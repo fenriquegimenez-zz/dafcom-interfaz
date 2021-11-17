@@ -1,11 +1,11 @@
 import { styles } from "../../styles/styles"
-import Logo from "../../public/logo.jpg"
 import Image from "next/image"
 import Link from "next/link"
 import { Dropdown } from "react-bootstrap"
 import { FiLogOut } from "react-icons/fi"
 import { MdAddCircleOutline as AddIcon } from "react-icons/md"
 import { useAuth0 } from "@auth0/auth0-react"
+import { torreUrl } from "../../helpers/variables"
 
 export default function Navbar() {
   const { logout } = useAuth0()
@@ -20,7 +20,12 @@ export default function Navbar() {
               cursor: "pointer",
             }}
           >
-            <Image src={Logo} alt="Company logo" height={100} width={200} />
+            <Image
+              src={torreUrl}
+              alt="Company logo"
+              height="80%"
+              width="72rem"
+            />
           </div>
         </Link>
         <Dropdown align={{ xl: "start" }}>
@@ -31,13 +36,13 @@ export default function Navbar() {
               <Dropdown.Item>Tecnicos</Dropdown.Item>
             </Link>
             <Link href="proveedores" passHref>
-              <Dropdown.Item>Proveedores</Dropdown.Item>
+              <Dropdown.Item>Instituciones</Dropdown.Item>
             </Link>
             <Link href="servicios" passHref>
-              <Dropdown.Item>Servicios</Dropdown.Item>
+              <Dropdown.Item>Identificadores</Dropdown.Item>
             </Link>
             <Link href="torres" passHref>
-              <Dropdown.Item>Torres</Dropdown.Item>
+              <Dropdown.Item>Zonas</Dropdown.Item>
             </Link>
             <Dropdown.Divider />
             <Dropdown.Item onClick={() => logout()}>

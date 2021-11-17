@@ -8,13 +8,13 @@ import Title from "../Title"
 export default function ServiciosTable({ servicios }: ServiciosProps) {
   return (
     <div className={styles.tables.generic}>
-      <Title name="Últimos servicios"></Title>
+      <Title name="Identificadores"></Title>
       <Table striped bordered hover responsive>
         <thead>
           <tr>
-            <th>Torre</th>
-            <th>Descripción Servicio</th>
-            <th>Proveedor</th>
+            <th>Zona</th>
+            <th>Descripción</th>
+            <th>Institución</th>
             <th>Técnico</th>
             <th>Status</th>
           </tr>

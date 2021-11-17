@@ -52,3 +52,11 @@ export interface ServiciosFormProps {
   tecnicos: TTecnico[]
   torres: TTorre[]
 }
+
+export interface LayoutChild {
+  children: React.ReactNode
+}
+
+export interface LandingProps {
+  auth: boolean
+}
