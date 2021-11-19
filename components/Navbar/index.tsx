@@ -1,11 +1,11 @@
-import { styles } from "../../styles/styles"
-import Image from "next/image"
-import Link from "next/link"
-import { Dropdown } from "react-bootstrap"
-import { FiLogOut } from "react-icons/fi"
-import { MdAddCircleOutline as AddIcon } from "react-icons/md"
-import { useAuth0 } from "@auth0/auth0-react"
-import { torreUrl } from "../../helpers/variables"
+import { styles } from '../../styles/styles'
+import Image from 'next/image'
+import Link from 'next/link'
+import { Dropdown } from 'react-bootstrap'
+import { FiLogOut } from 'react-icons/fi'
+import { MdAddCircleOutline as AddIcon } from 'react-icons/md'
+import { useAuth0 } from '@auth0/auth0-react'
+import { torreUrl } from '../../helpers/variables'
 
 export default function Navbar() {
   const { logout } = useAuth0()
@@ -17,7 +17,7 @@ export default function Navbar() {
           <div
             className="navbar-brand"
             style={{
-              cursor: "pointer",
+              cursor: 'pointer',
             }}
           >
             <Image
@@ -28,14 +28,14 @@ export default function Navbar() {
             />
           </div>
         </Link>
-        <Dropdown align={{ xl: "start" }}>
+        <Dropdown align={{ xl: 'start' }}>
           <Dropdown.Toggle variant="secondary">{<AddIcon />}</Dropdown.Toggle>
           <Dropdown.Menu>
             <Dropdown.Header>Cargar</Dropdown.Header>
             <Link href="tecnicos" passHref>
               <Dropdown.Item>Tecnicos</Dropdown.Item>
             </Link>
-            <Link href="proveedores" passHref>
+            <Link href="/proveedores/cargar" passHref>
               <Dropdown.Item>Instituciones</Dropdown.Item>
             </Link>
             <Link href="servicios" passHref>

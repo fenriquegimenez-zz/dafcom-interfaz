@@ -1,20 +1,22 @@
-import { GetServerSideProps, InferGetServerSidePropsType } from "next"
-import ProveedoresForm from "../../components/Forms/Proveedores"
+import Alert from '../../components/Alerts'
+import EmpresasTable from '../../components/Tables/empresas'
+import { apiHost } from '../../helpers/variables'
+import { EmpresasProps } from '../../types/types'
 
-export default function Page({
-  empresas,
-}: InferGetServerSidePropsType<GetServerSideProps>) {
-  return <ProveedoresForm />
+export default function Page({ empresas }: EmpresasProps) {
+  return empresas.length > 0 ? (
+    <EmpresasTable empresas={empresas} />
+  ) : (
+    <Alert header="Error" body="Aún no se han cargado instituciones" />
+  )
 }
 
-// export async function getServerSideProps() {
-//   const response = await fetch(
-//     `${process.env.NEXT_PUBLIC_API_ENDPOINT}/proveedores`
-//   )
-//   const empresas = await response.json()
-//   return {
-//     props: {
-//       empresas,
-//     },
-//   }
-// }
+export async function getServerSideProps() {
+  const response = await fetch(`${apiHost}/empresas`)
+  const { data } = await response.json()
+  return {
+    props: {
+      empresas: data ? data : [],
+    },
+  }
+}

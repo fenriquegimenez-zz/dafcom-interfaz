@@ -1,27 +1,29 @@
+import { Document } from 'mongoose'
+
 export interface TTitle {
   name: string
 }
 
 export interface TCargarButton {
   recurso: string
+  endpoint: string
+  body: Object
 }
 
-export interface TTecnico {
+export interface TTecnico extends Document {
   documento: number
   nombre: string
   apellido: string
 }
 
-export interface TTorre {
+export interface TTorre extends Document {
   ciudad: string
   direccion: string
   latitud: string
   longitud: string
-  id: string
 }
 
-export interface TServicio {
-  id: string
+export interface TServicio extends Document {
   torre: string
   descripcion: string
   proveedor: string
@@ -33,9 +35,10 @@ export interface TecnicosProps {
   tecnicos: TTecnico[]
 }
 
-export interface TEmpresa {
+export interface TEmpresa extends Document {
   ruc: string
   razonSocial: string
+  sector: string
 }
 
 export interface EmpresasProps {
@@ -59,4 +62,11 @@ export interface LayoutChild {
 
 export interface LandingProps {
   auth: boolean
+}
+
+export interface TEmpresaResponse {
+  data?: TEmpresa[] | TEmpresa | undefined
+  msg: string
+  statusCode: number
+  success: boolean
 }
