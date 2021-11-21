@@ -16,11 +16,6 @@ export const backgroundImg: CSSProperties = {
   margin: 0,
 }
 
-export const mongoOptions = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}
-
 export interface TMongoConnection {
   isConnected?: boolean | number
 }

@@ -11,10 +11,9 @@ import {
   notAllowedResponse,
   successResponse,
 } from '../../resources/empresas/empresas.response'
-import {
-  createEmpresaDto,
-  getByIdDto,
-} from '../../resources/empresas/empresas.dto'
+import { createEmpresaDto } from '../../resources/empresas/empresas.dto'
+
+import { getByIdDto } from '../../helpers/getByIdDto'
 
 export default async function handler(
   req: NextApiRequest,

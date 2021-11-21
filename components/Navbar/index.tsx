@@ -1,14 +1,11 @@
 import { styles } from '../../styles/styles'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Dropdown } from 'react-bootstrap'
-import { FiLogOut } from 'react-icons/fi'
-import { MdAddCircleOutline as AddIcon } from 'react-icons/md'
-import { useAuth0 } from '@auth0/auth0-react'
 import { torreUrl } from '../../helpers/variables'
+import CargarDropdown from '../Dropdown/cargar'
+import MenuDropdown from '../Dropdown/menu'
 
 export default function Navbar() {
-  const { logout } = useAuth0()
   const { navbar } = styles.nav
   return (
     <div className={navbar}>
@@ -28,28 +25,8 @@ export default function Navbar() {
             />
           </div>
         </Link>
-        <Dropdown align={{ xl: 'start' }}>
-          <Dropdown.Toggle variant="secondary">{<AddIcon />}</Dropdown.Toggle>
-          <Dropdown.Menu>
-            <Dropdown.Header>Cargar</Dropdown.Header>
-            <Link href="tecnicos" passHref>
-              <Dropdown.Item>Tecnicos</Dropdown.Item>
-            </Link>
-            <Link href="/proveedores/cargar" passHref>
-              <Dropdown.Item>Instituciones</Dropdown.Item>
-            </Link>
-            <Link href="servicios" passHref>
-              <Dropdown.Item>Identificadores</Dropdown.Item>
-            </Link>
-            <Link href="torres" passHref>
-              <Dropdown.Item>Zonas</Dropdown.Item>
-            </Link>
-            <Dropdown.Divider />
-            <Dropdown.Item onClick={() => logout()}>
-              Cerrar sesión {<FiLogOut />}
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+        <MenuDropdown />
+        <CargarDropdown />
       </div>
     </div>
   )

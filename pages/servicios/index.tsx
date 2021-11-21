@@ -1,29 +1,22 @@
-import { GetServerSideProps, InferGetServerSidePropsType } from "next"
-import ServiciosForm from "../../components/Forms/Servicios"
-import { apiHost } from "../../helpers/variables"
+import Alert from '../../components/Alerts'
+import ServiciosTable from '../../components/Tables/servicios'
+import { apiHost } from '../../helpers/variables'
+import { ServiciosProps } from '../../types/types'
 
-export default function Page({
-  torres,
-  empresas,
-  tecnicos,
-}: InferGetServerSidePropsType<GetServerSideProps>) {
-  return (
-    <ServiciosForm torres={torres} empresas={empresas} tecnicos={tecnicos} />
+export default function Page({ servicios }: ServiciosProps) {
+  return servicios.length > 0 ? (
+    <ServiciosTable servicios={servicios} />
+  ) : (
+    <Alert header="Error" body="Aún no se han cargado identificadores" />
   )
 }
 
 export async function getServerSideProps() {
-  const responseTorres = await fetch(`${apiHost}/torres`)
-  const responseEmpresas = await fetch(`${apiHost}/empresas`)
-  const responseTecnicos = await fetch(`${apiHost}/tecnicos`)
-  const torres = await responseTorres.json()
-  const empresas = await responseEmpresas.json()
-  const tecnicos = await responseTecnicos.json()
+  const response = await fetch(`${apiHost}/servicios`)
+  const { data } = await response.json()
   return {
     props: {
-      torres,
-      empresas,
-      tecnicos,
+      servicios: data ? data : [],
     },
   }
 }

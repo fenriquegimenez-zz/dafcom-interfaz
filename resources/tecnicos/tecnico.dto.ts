@@ -1,11 +1,12 @@
 import Joi from 'joi'
-import { TEmpresa } from '../../types/types'
+import { TTecnico } from '../../types/types'
 
-export function createEmpresaDto(payload: TEmpresa) {
+export function createTecnicoDto(payload: TTecnico) {
   const schema = Joi.object({
-    razonSocial: Joi.string().required(),
-    ruc: Joi.string().required(),
-    sector: Joi.string().required(),
+    documento: Joi.number().required(),
+    nombre: Joi.string().required(),
+    apellido: Joi.string().required(),
+    empresa: Joi.string().required(),
   })
 
   if (!payload) {
@@ -15,6 +16,7 @@ export function createEmpresaDto(payload: TEmpresa) {
     }
   }
   const { error } = schema.validate(payload)
+
   return {
     isValid: error == null,
     error: error?.message,

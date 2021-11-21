@@ -14,6 +14,7 @@ export interface TTecnico extends Document {
   documento: number
   nombre: string
   apellido: string
+  empresa: string
 }
 
 export interface TTorre extends Document {
@@ -26,9 +27,10 @@ export interface TTorre extends Document {
 export interface TServicio extends Document {
   torre: string
   descripcion: string
-  proveedor: string
+  empresa: string
   tecnico: string
   status: boolean
+  rfid: string
 }
 
 export interface TecnicosProps {
@@ -49,6 +51,10 @@ export interface ServiciosProps {
   servicios: TServicio[]
 }
 
+export interface TorresProps {
+  torres: TTorre[]
+}
+
 export interface ServiciosFormProps {
   servicios?: TServicio[]
   empresas: TEmpresa[]
@@ -66,6 +72,27 @@ export interface LandingProps {
 
 export interface TEmpresaResponse {
   data?: TEmpresa[] | TEmpresa | undefined
+  msg: string
+  statusCode: number
+  success: boolean
+}
+
+export interface TTecnicoResponse {
+  data?: TTecnico[] | TTecnico | undefined
+  msg: string
+  statusCode: number
+  success: boolean
+}
+
+export interface TTorreResponse {
+  data?: TTorre[] | TTorre | undefined
+  msg: string
+  statusCode: number
+  success: boolean
+}
+
+export interface TServicioResponse {
+  data?: TServicio[] | TServicio | undefined
   msg: string
   statusCode: number
   success: boolean
