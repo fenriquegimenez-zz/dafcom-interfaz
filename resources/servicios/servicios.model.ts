@@ -23,6 +23,10 @@ const ServicioSchema: Schema = new Schema({
     default: true,
     required: true,
   },
+  rfid: {
+    type: String,
+    required: true,
+  },
 })
 
 const Servicio: Model<TServicio> =
