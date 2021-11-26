@@ -3,6 +3,7 @@ import CargarButton from '../../Buttons/cargarButton'
 import { ServiciosFormProps } from '../../../types/types'
 import InputGroup from '../../InputGroup'
 import { useState } from 'react'
+import { validator } from '../../../helpers/validator'
 
 export default function ServiciosForm({
   torres,
@@ -91,6 +92,13 @@ export default function ServiciosForm({
         ></textarea>
       </InputGroup>
       <CargarButton
+        disabled={validator({
+          torre,
+          empresa,
+          tecnico,
+          rfid,
+          descripcion,
+        })}
         recurso="identificador"
         body={{
           torre,

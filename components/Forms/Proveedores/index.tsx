@@ -1,8 +1,7 @@
 import Title from '../../Title'
 import CargarButton from '../../Buttons/cargarButton'
 import { FormEvent, useState } from 'react'
-import { apiHost } from '../../../helpers/variables'
-import notify from '../../../helpers/notifier'
+import { validator } from '../../../helpers/validator'
 
 export default function ProveedoresForm() {
   const [ruc, setRuc] = useState('')
@@ -48,6 +47,11 @@ export default function ProveedoresForm() {
         />
       </div>
       <CargarButton
+        disabled={validator({
+          ruc: ruc,
+          razonSocial: razonSocial,
+          sector: sector,
+        })}
         recurso="institución"
         endpoint="empresa"
         body={{

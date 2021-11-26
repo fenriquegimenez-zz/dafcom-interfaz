@@ -8,6 +8,7 @@ export default function CargarButton({
   recurso,
   body,
   endpoint,
+  disabled,
 }: TCargarButton) {
   async function loadingButton(e: FormEvent) {
     const options = {
@@ -28,6 +29,7 @@ export default function CargarButton({
     <div className={styles.buttons.cargarButton}>
       <button
         className="btn btn-outline-dark"
+        disabled={disabled}
         type="submit"
         onClick={loadingButton}
       >

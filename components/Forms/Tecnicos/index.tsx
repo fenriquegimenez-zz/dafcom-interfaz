@@ -1,7 +1,9 @@
 import Title from '../../Title'
 import CargarButton from '../../Buttons/cargarButton'
-import { TTecnico, EmpresasProps, TEmpresa } from '../../../types/types'
+import { EmpresasProps, TEmpresa } from '../../../types/types'
 import { FormEvent, useState } from 'react'
+import { validator } from '../../../helpers/validator'
+import { valid } from 'joi'
 
 export default function TecnicosForm({ empresas }: EmpresasProps) {
   const [documento, setDocumento] = useState('')
@@ -75,6 +77,12 @@ export default function TecnicosForm({ empresas }: EmpresasProps) {
           empresa: empresa,
         }}
         endpoint="/tecnico"
+        disabled={validator({
+          documento: +documento,
+          nombre: nombre,
+          apellido: apellido,
+          empresa: empresa,
+        })}
       />
     </form>
   )

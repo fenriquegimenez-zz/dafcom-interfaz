@@ -18,6 +18,7 @@ export default function TorresForm() {
         />
       </div>
       <CargarButton
+        disabled={ciudad === ''}
         recurso="zona"
         body={{
           ciudad,

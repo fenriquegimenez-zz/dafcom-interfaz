@@ -8,6 +8,7 @@ export interface TCargarButton {
   recurso: string
   endpoint: string
   body: Object
+  disabled: boolean
 }
 
 export interface TTecnico extends Document {
