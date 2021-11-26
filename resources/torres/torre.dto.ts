@@ -4,9 +4,6 @@ import { TTorre } from '../../types/types'
 export function createTorreDto(payload: TTorre) {
   const schema = Joi.object({
     ciudad: Joi.string().required(),
-    direccion: Joi.string().required(),
-    latitud: Joi.string().required(),
-    longitud: Joi.string().required(),
   })
 
   if (!payload) {

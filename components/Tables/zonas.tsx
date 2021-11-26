@@ -12,9 +12,6 @@ export default function TorresTable({ torres }: TorresProps) {
         <thead>
           <tr>
             <th>Ciudad</th>
-            <th>Dirección</th>
-            <th>Latitud</th>
-            <th>Longitud</th>
             <th>Eliminar</th>
           </tr>
         </thead>
@@ -24,9 +21,6 @@ export default function TorresTable({ torres }: TorresProps) {
             return (
               <tr key={torre._id}>
                 <td>{torre.ciudad}</td>
-                <td>{torre.direccion}</td>
-                <td>{torre.latitud}</td>
-                <td>{torre.longitud}</td>
                 <td>
                   <DeleteButton
                     recurso="torre"
